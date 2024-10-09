@@ -1,14 +1,10 @@
 # Using a fork of the https://github.com/lukechilds/dockerpi vm with multiple
 # improvements and fixes.
-FROM ghcr.io/carlosperate/qemu-rpi-vm:2024-01-03
-
-LABEL org.opencontainers.image.authors="Carlos Pereira Atencio <carlosperate@embeddedlog.com>"
-LABEL org.opencontainers.image.description="Docker image with Raspberry Pi OS running on QEMU."
-LABEL org.opencontainers.image.source="https://github.com/carlosperate/docker-qemu-rpi-os"
+FROM biomi-emulator-vm:8.2.0
 
 # Select the GitHub tag from the release that hosts the OS files
 # https://github.com/carlosperate/rpi-os-custom-image/releases/
-ARG GH_TAG="bullseye-legacy-2023-10-10"
+ARG GH_TAG="bookworm-2023-10-10"
 
 # To build a different image type from the release the FILE_SUFFIX variable
 # can be overwritten with the `docker build --build-arg` flag

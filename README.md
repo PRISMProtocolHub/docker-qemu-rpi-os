@@ -16,7 +16,7 @@ Oversimplified diagram:
 |  |                         |  |
 |  +-------------------------+  |
 |  |                         |  |
-|  |  QEMU Emulating ARMv6   |  |
+|  |  QEMU Emulating ARMv8   |  |
 |  |                         |  |
 |  +-------------------------+  |
 |                               |
@@ -27,14 +27,9 @@ Oversimplified diagram:
 +-------------------------------+
 ```
 
-These Docker images are built on top of the fantastic
-[dockerpi](https://github.com/lukechilds/dockerpi) project, all credit for
-the hard work goes to them. The main difference in this version is that the
-[Raspberry Pi OS Lite image used](https://github.com/carlosperate/rpi-os-custom-image)
-has been updated to enable auto-login, SSH, and expand their filesystem size.
-
-These changes make these images useful for things like running automated
-tests on CI, e.g. GitHub Actions.
+That project is a fork of https://github.com/carlosperate/rpi-os-custom-image/ that is also a fork of the [dockerpi](https://github.com/lukechilds/dockerpi) project, all credit for
+the hard work goes to them.
+It is meant to allow testing on a emulated raspberry pi as well as running code on CI to compile Python applications in that environment.
 
 ## How to use these images
 

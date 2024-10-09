@@ -25,24 +25,14 @@ if [[ "$(($image_size_in_bytes % ($GIB_IN_BYTES * 2)))" != "0" ]]; then
   qemu-img resize $image_path "${new_size_in_gib}G"
 fi
 
-if [ "${target}" = "pi1" ]; then
-  emulator=qemu-system-arm
-  kernel="/root/qemu-rpi-kernel/kernel-qemu-4.19.50-buster"
-  dtb="/root/qemu-rpi-kernel/versatile-pb.dtb"
-  machine=versatilepb
-  cpu=arm1176
-  smp=1
-  memory=256m
-  root=/dev/sda2
-  nic="--net nic --net user,hostfwd=tcp::5022-:22"
-elif [ "${target}" = "pi2" ]; then
-  emulator=qemu-system-arm
-  machine=raspi2b
-  cpu=cortex-a7
+if [ "${target}" = "zero2" ]; then
+  emulator=qemu-system-aarch64
+  machine=raspi3b
+  cpu=cortex-a53
   smp=4
   memory=1024m
-  kernel_pattern=kernel7.img
-  dtb_pattern=bcm2709-rpi-2-b.dtb
+  kernel_pattern=kernel8.img
+  dtb_pattern=bcm2710-rpi-3-b-plus.dtb
   append="dwc_otg.fiq_fsm_enable=0"
   nic="-netdev user,id=net0,hostfwd=tcp::5022-:22 -device usb-net,netdev=net0"
 elif [ "${target}" = "pi3" ]; then
