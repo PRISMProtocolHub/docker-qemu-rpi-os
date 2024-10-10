@@ -36,7 +36,7 @@ It is meant to allow testing on a emulated raspberry pi as well as running code 
 The main image produced in this repository can be run with this command:
 
 ```bash
-docker run -it ghcr.io/carlosperate/qemu-rpi-os-lite:bullseye-latest
+docker run -it ghcr.io/prismprotocolhub/biomi-emulator:latest
 ```
 
 This will drop you into a bash session inside Raspberry Pi OS.
@@ -46,7 +46,7 @@ This will drop you into a bash session inside Raspberry Pi OS.
 You can also launch an image with port forwarding and access it via SSH:
 
 ```bash
-docker run -it -p 5022:5022 ghcr.io/carlosperate/qemu-rpi-os-lite:bullseye-latest
+docker run -it -p 5022:5022 ghcr.io/prismprotocolhub/biomi-emulator:latest
 ```
 
 - SSH port: `5022`
@@ -55,15 +55,9 @@ docker run -it -p 5022:5022 ghcr.io/carlosperate/qemu-rpi-os-lite:bullseye-lates
 
 ## Available Images
 
-There are two main releases right now `buster-latest` and
-`bullseye-latest`:
-
+There is one main releases right now
 ```
-ghcr.io/carlosperate/qemu-rpi-os-lite:bullseye-latest
-```
-
-```
-ghcr.io/carlosperate/qemu-rpi-os-lite:buster-latest
+ghcr.io/prismprotocolhub/biomi-emulator:latest
 ```
 
 Each Pi OS release has its own tag, including the OS release date in this
@@ -91,18 +85,6 @@ Each OS release is tracked and customised via the
 [Raspberry Pi OS Custom Image](https://github.com/carlosperate/rpi-os-custom-image)
 repository, which then hosts the custom images in its
 [releases page](https://github.com/carlosperate/rpi-os-custom-image/releases).
-
-### Older OS versions
-
-Older versions of Raspbian/Raspberry Pi OS have been tagged and published:
-
-```bash
-docker run -it ghcr.io/carlosperate/qemu-rpi-os-lite:jessie-latest
-```
-
-```bash
-docker run -it ghcr.io/carlosperate/qemu-rpi-os-lite:stretch-latest
-```
 
 ## Build and run this docker image from the repository
 

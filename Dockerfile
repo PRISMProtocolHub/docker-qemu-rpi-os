@@ -1,6 +1,6 @@
 # Using a fork of the https://github.com/lukechilds/dockerpi vm with multiple
 # improvements and fixes.
-FROM biomi-emulator-vm:8.2.0
+FROM biomi-emulator-qemu:8.2.0
 
 # Select the GitHub tag from the release that hosts the OS files
 # https://github.com/carlosperate/rpi-os-custom-image/releases/
